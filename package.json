@@ -1,6 +1,5 @@
 {
-  "private": true,
-  "sideEffects": false,
+  "name": "workshop-remix-sanity-studio-v3",
   "scripts": {
     "build": "npm run build:css && remix build",
     "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
