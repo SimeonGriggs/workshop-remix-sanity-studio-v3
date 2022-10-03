@@ -77,18 +77,20 @@ export default defineType({
       group: ['details'],
     }),
   ],
-  // preview: {
-  //   select: {
-  //     title: 'title',
-  //     subtitle: 'category.title',
-  //     images: 'images',
-  //   },
-  //   prepare: ({title, subtitle, images}) => {
-  //     return {
-  //       title,
-  //       subtitle,
-  //       media: images?.length ? images[0] : TrolleyIcon,
-  //     }
-  //   },
-  // },
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'category.title',
+      images: 'images',
+    },
+    prepare: (selection: {[key: string]: any}) => {
+      const {title, subtitle, images} = selection
+
+      return {
+        title,
+        subtitle,
+        media: images?.length ? images[0] : TrolleyIcon,
+      }
+    },
+  },
 })
