@@ -1,10 +1,10 @@
 import {createConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
 import {dashboardTool, projectUsersWidget, projectInfoWidget} from '@sanity/dashboard'
 
 import schema from './schema'
 import {structure, defaultDocumentNode} from './structure'
+import {faker} from './plugins/faker'
 
 export const projectDetails = () => ({
   projectId:
@@ -26,8 +26,7 @@ export const config = createConfig({
     dashboardTool({
       widgets: [projectUsersWidget(), projectInfoWidget()],
     }),
-    // visionTool(),
-    // media()
+    faker(),
   ],
   basePath: `/studio`,
   schema: {
